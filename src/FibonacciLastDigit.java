@@ -35,32 +35,6 @@ public class FibonacciLastDigit {
 
     public static void main(String[] args) {
         int n;
-/**
-         long valueCanonical = 0;
-         long valueFast = 0;
-         Random generator = new Random();
-         while (true)
-         {
-             n = generator.nextInt(10) + 10;
-
-             System.out.print(" TESTING with n = "+ n);
-             valueCanonical = getFibonacciLastDigit(n);
-
-             valueFast = getFibonacciLastDigitFast(n);
-
-             if (valueCanonical == valueFast)
-             {
-                 System.out.print(" OK ");
-                 System.out.println(" valueCanonical="+valueCanonical+ " valueFast = "+ valueFast);
-             }
-             else
-             {
-                 System.out.print(" ERROR ");
-                 System.out.println(" valueCanonical="+valueCanonical+ " valueFast = "+ valueFast);
-                 break;
-             }
-         }
-        **/
 
         Scanner scanner = new Scanner(System.in);
         n = scanner.nextInt();

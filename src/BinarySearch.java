@@ -57,6 +57,7 @@ public class BinarySearch {
             System.out.print(binarySearch(a, b[i]) + " ");
         }
     }
+
     static class FastScanner {
         BufferedReader br;
         StringTokenizer st;
