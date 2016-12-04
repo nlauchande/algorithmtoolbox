@@ -10,14 +10,14 @@ public class MajorityElement {
 
     private static int getMajorityElement(int[] a, int left, int right) {
 
-
-        if ((left==right-1))
+        if ((right-left==1))
         {
             return a[left];
+
         }
 
-        int leftMajority =  getMajorityElement(a,left,(left-right)/2);
-        int rightMajority =  getMajorityElement(a,((left-right)/2)+1,right);
+        int leftMajority =  getMajorityElement(a,left,(left+(right-left)/2));
+        int rightMajority = getMajorityElement(a,(left+(right-left)/2),right);
 
         if (leftMajority == rightMajority)
         {
@@ -25,24 +25,20 @@ public class MajorityElement {
         }
         else
         {
-            int leftMajorityCount =0  ;
+            int leftMajorityCount = 0;
             int rightMajorityCount = 0;
-            for(int i = left ; i<right; i++ )
+
+            for (int i = left; i < right;i++)
             {
-                if (a[i]==leftMajority)
-                {
-                    leftMajorityCount++;
-                }
-
-                if (a[i]==rightMajority)
-                {
-                    rightMajorityCount++;
-                }
-
+                if (a[i]==leftMajority) leftMajorityCount++;
+                if (a[i]==rightMajority) rightMajorityCount++;
             }
-            if (Math.max(leftMajorityCount, rightMajorityCount) >= (left-right/2)+1 )
+
+            int maxValue = Math.max(leftMajorityCount, rightMajorityCount);
+
+            if (maxValue>((right-left)/2))
             {
-                return Math.max(leftMajorityCount, rightMajorityCount);
+                return maxValue==leftMajorityCount?leftMajority:rightMajority;
             }
             else
             {
